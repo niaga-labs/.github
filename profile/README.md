@@ -53,21 +53,24 @@ Planned products, shown so you know where the studio is heading. No dates or pri
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0B1F3A", "primaryTextColor": "#FFFFFF", "nodeTextColor": "#FFFFFF", "primaryBorderColor": "#0F8B8D", "lineColor": "#0F8B8D", "titleColor": "#0F8B8D", "textColor": "#0F8B8D"}}}%%
-flowchart TB
-    NL["<b>Niaga Labs</b><br/>software studio · Malaysia"]
+flowchart LR
+    NL["<b>Niaga Labs</b><br/>software studio<br/>Malaysia"]
 
     subgraph NOW["Building now"]
+        direction TB
         COM["<b>Niaga Commerce</b><br/>e-commerce platform"]
         QNT["<b>Quant research</b><br/>our own paper book"]
     end
 
     subgraph NEXT["Next, one at a time"]
+        direction TB
         CA["<b>Chain Analytics</b><br/>coming soon"]
         CT["<b>Chain trading tool</b><br/>coming soon"]
         KPD["<b>Kilat Pet Delivery</b><br/>later"]
     end
 
     subgraph PLAT["Shared platform"]
+        direction TB
         STACK["<b>Dev stack</b><br/>one command"]
         CF["<b>Cloudflare</b><br/>site · email · backups"]
         FLOW["<b>Jira + GitHub</b><br/>ticket → merge"]
@@ -75,8 +78,7 @@ flowchart TB
 
     NL --> NOW
     NL -.-> NEXT
-    NOW --> PLAT
-    NEXT -.-> PLAT
+    NL --> PLAT
 
     classDef root fill:#0F8B8D,stroke:#0F8B8D,color:#FFFFFF
     classDef soon fill:#12304F,stroke:#0F8B8D,stroke-dasharray:5 4,color:#D8E6F0
@@ -84,9 +86,9 @@ flowchart TB
     class NL root
     class CA,CT soon
     class KPD later
-    style NOW fill:none,stroke:#0F8B8D
-    style NEXT fill:none,stroke:#6B7C90,stroke-dasharray:5 4
-    style PLAT fill:none,stroke:#0F8B8D
+    style NOW fill:none,stroke:#0F8B8D,color:#0F8B8D
+    style NEXT fill:none,stroke:#6B7C90,stroke-dasharray:5 4,color:#6B7C90
+    style PLAT fill:none,stroke:#0F8B8D,color:#0F8B8D
 ```
 
 ## Inside Niaga Commerce
@@ -150,11 +152,10 @@ flow, the database design and the patterns behind them.
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0B1F3A", "primaryTextColor": "#FFFFFF", "nodeTextColor": "#FFFFFF", "primaryBorderColor": "#0F8B8D", "lineColor": "#0F8B8D"}}}%%
 flowchart LR
-    T["<b>Jira ticket</b><br/>acceptance criteria"] --> B["<b>Branch</b><br/>named for the ticket"]
-    B --> C["<b>Code + tests</b><br/>exact counts"]
-    C --> R["<b>Review agent</b><br/>must approve"]
+    T["<b>Jira ticket</b><br/>own branch"] --> C["<b>Code + tests</b><br/>exact counts"]
+    C --> R["<b>Review</b><br/>must approve"]
     R --> P["<b>Pull request</b><br/>CI runs"]
-    P --> M["<b>Merge</b><br/>changelog · ticket done"]
+    P --> M["<b>Merge</b><br/>changelog, Done"]
 
     classDef done fill:#0F8B8D,stroke:#0F8B8D,color:#FFFFFF
     class M done
