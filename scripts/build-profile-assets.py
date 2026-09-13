@@ -1,14 +1,16 @@
 """Build the artwork on github.com/niaga-labs (profile/assets/, HQ-123).
 
 Every word is drawn as vector paths from the Geist fonts, so the SVGs look the same on every
-machine and need no web font. Colours are direction A "Ledger" (dev-infra DECISIONS 2026-09-13):
-navy #0B1F3A and one teal #0F8B8D. The mark is the HQ-108 interrupted N, unchanged.
+machine and need no web font. Colours are the Ledger palette: navy #0B1F3A and one teal #0F8B8D.
+The mark is the Niaga Labs interrupted N, unchanged.
 
-What the cards say follows the same ruling: Niaga Commerce and the quant research platform lead,
-the two Chain products are "Coming soon", Kilat is "Later", and the token deployer and the
-launchpad are not listed. Every number in STATS is counted, not estimated; the README says where.
+What the cards say is the company's published product line-up: Niaga Commerce and the quant
+research platform lead, the two Chain products are "Coming soon" and Kilat is "Later". Change it
+only together with the company site. Every number in STATS is counted, not estimated; the README
+says where.
 
-Run from the repo root (the fonts live in niaga-labs-hq-company-site, src/app/fonts/):
+Run from the repo root. --fonts is a folder holding the Geist variable fonts as GeistVF.woff and
+GeistMonoVF.woff (the files create-next-app ships in app/fonts/; Geist is under the SIL OFL):
 
     uv run --with fonttools python scripts/build-profile-assets.py --fonts <dir>
 """
@@ -26,19 +28,41 @@ OUT = Path(__file__).resolve().parents[1] / "profile" / "assets"
 NAVY = "#0B1F3A"
 TEAL = "#0F8B8D"
 
-# The HQ-108 interrupted N in its 64-unit box (company-site scripts/create-brand.py).
+# The interrupted N in its 64-unit box, as in the brand kit.
 MARK = '<path d="M8 56V12h12l20 26V24h12v32H40L20 30v26Z"/><rect x="40" y="6" width="12" height="12" rx="2"/>'
 
 THEMES = {
     "light": {
-        "card": "#FFFFFF", "border": "#D9E1EA", "title": NAVY, "body": "#4A5A6E", "strong": "#243447",
-        "muted": "#6B7C90", "accent": "#0C7A7C", "tint": "#E3F2F2", "icon": TEAL, "chip": "#EEF3F7",
-        "chip_text": "#2E3F52", "rule": "#E6ECF2", "later": "#EEF1F5", "later_text": "#5B6B80",
+        "card": "#FFFFFF",
+        "border": "#D9E1EA",
+        "title": NAVY,
+        "body": "#4A5A6E",
+        "strong": "#243447",
+        "muted": "#6B7C90",
+        "accent": "#0C7A7C",
+        "tint": "#E3F2F2",
+        "icon": TEAL,
+        "chip": "#EEF3F7",
+        "chip_text": "#2E3F52",
+        "rule": "#E6ECF2",
+        "later": "#EEF1F5",
+        "later_text": "#5B6B80",
     },
     "dark": {
-        "card": NAVY, "border": "#1E3A5F", "title": "#FFFFFF", "body": "#B6C4D4", "strong": "#DCE5EE",
-        "muted": "#8FA3B8", "accent": "#5FC3C5", "tint": "#123F4F", "icon": "#5FC3C5", "chip": "#12294A",
-        "chip_text": "#C8D3DF", "rule": "#173154", "later": "#1A2B42", "later_text": "#9AABBD",
+        "card": NAVY,
+        "border": "#1E3A5F",
+        "title": "#FFFFFF",
+        "body": "#B6C4D4",
+        "strong": "#DCE5EE",
+        "muted": "#8FA3B8",
+        "accent": "#5FC3C5",
+        "tint": "#123F4F",
+        "icon": "#5FC3C5",
+        "chip": "#12294A",
+        "chip_text": "#C8D3DF",
+        "rule": "#173154",
+        "later": "#1A2B42",
+        "later_text": "#9AABBD",
     },
 }
 
@@ -55,35 +79,64 @@ ICONS = {
 
 FEATURED = [
     {
-        "slug": "commerce", "icon": "bag", "overline": "E-COMMERCE PLATFORM", "title": "Niaga Commerce",
+        "slug": "commerce",
+        "icon": "bag",
+        "overline": "E-COMMERCE PLATFORM",
+        "title": "Niaga Commerce",
         "status": ("In development", "active"),
         "summary": "A commerce platform that connects a storefront with catalogue, orders, payments and "
-                   "fulfilment. Our own dropship store is the starting point.",
-        "features": ["Catalogue, orders, payments and refunds", "Shopee and TikTok Shop sync",
-                     "Multi-courier shipping and returns"],
-        "chips": ["Go", "Next.js", "PostgreSQL", "NATS"], "link": "Write-up",
+        "fulfilment. Our own dropship store is the starting point.",
+        "features": [
+            "Catalogue, orders, payments and refunds",
+            "Shopee and TikTok Shop sync",
+            "Multi-courier shipping and returns",
+        ],
+        "chips": ["Go", "Next.js", "PostgreSQL", "NATS"],
+        "link": "Write-up",
     },
     {
-        "slug": "quant", "icon": "flask", "overline": "QUANTITATIVE RESEARCH", "title": "Quant research platform",
+        "slug": "quant",
+        "icon": "flask",
+        "overline": "QUANTITATIVE RESEARCH",
+        "title": "Quant research platform",
         "status": ("Paper trading", "active"),
         "summary": "Our own paper-trading platform for testing strategies. Every idea is judged the same "
-                   "way, and failures stay on the record. It is not a service.",
-        "features": ["Pre-registered strategy specs", "One shared walk-forward audit",
-                     "Eleven-criterion promotion gate"],
-        "chips": ["Python", "FastAPI", "React", "PostgreSQL"], "link": "Notes",
+        "way, and failures stay on the record. It is not a service.",
+        "features": [
+            "Pre-registered strategy specs",
+            "One shared walk-forward audit",
+            "Eleven-criterion promotion gate",
+        ],
+        "chips": ["Python", "FastAPI", "React", "PostgreSQL"],
+        "link": "Notes",
     },
 ]
 
 NEXT = [
-    {"slug": "chain-analytics", "icon": "chart", "overline": "ROBINHOOD CHAIN", "title": "Chain Analytics",
-     "status": ("Coming soon", "soon"),
-     "body": "A dashboard for Robinhood Chain market activity. Read-only research is under way first."},
-    {"slug": "chain-tool", "icon": "bot", "overline": "ROBINHOOD CHAIN", "title": "Chain trading tool",
-     "status": ("Coming soon", "soon"),
-     "body": "A tool for traders on Robinhood Chain, planned once the dashboard has proven useful."},
-    {"slug": "kilat", "icon": "truck", "overline": "LOGISTICS", "title": "Kilat Pet Delivery",
-     "status": ("Later", "later"),
-     "body": "Booking and live tracking for pet transport. Paused while we focus on commerce."},
+    {
+        "slug": "chain-analytics",
+        "icon": "chart",
+        "overline": "ROBINHOOD CHAIN",
+        "title": "Chain Analytics",
+        "status": ("Coming soon", "soon"),
+        "body": "A dashboard for Robinhood Chain market activity. Read-only research is under way first.",
+    },
+    {
+        "slug": "chain-tool",
+        "icon": "bot",
+        "overline": "ROBINHOOD CHAIN",
+        "title": "Chain trading tool",
+        "status": ("Coming soon", "soon"),
+        "body": "A tool for traders on Robinhood Chain, planned once the dashboard has proven useful.",
+    },
+    {
+        "slug": "kilat",
+        "icon": "truck",
+        "overline": "LOGISTICS",
+        "title": "Kilat Pet Delivery",
+        "status": ("Later", "later"),
+        "body": "Booking and live tracking for pet transport. Paused while we focus on commerce.",
+    },
 ]
 
 # (tag, number, label, detail). Sources are listed under the stats image in profile/README.md.
@@ -107,8 +160,7 @@ BANNER_ROWS = [
 
 
 def num(v: float) -> str:
-    s = f"{v:.1f}"
-    return s[:-2] if s.endswith(".0") else s
+    return f"{v:.1f}".removesuffix(".0")
 
 
 class Doc:
@@ -127,13 +179,13 @@ class Doc:
         return gid if self.defs[gid] else ""
 
     def render(self) -> str:
-        return f'<defs>{"".join(self.defs.values())}</defs>'
+        return f"<defs>{''.join(self.defs.values())}</defs>"
 
 
 class Face:
     """One weight of a Geist variable font, drawn as SVG outlines."""
 
-    def __init__(self, path: Path, weight: int, key: str):
+    def __init__(self, path: Path, weight: int, key: str) -> None:
         font = TTFont(path)
         self.glyphs = font.getGlyphSet(location={"wght": weight})
         self.cmap = font.getBestCmap()
@@ -162,8 +214,9 @@ class Face:
         scale = size / self.upm
         return sum(self.advance(c) * scale + tracking for c in text) - (tracking if text else 0)
 
-    def text(self, s: str, x: float, y: float, size: float, fill: str, tracking: float = 0.0,
-             anchor: str = "start") -> str:
+    def text(
+        self, s: str, x: float, y: float, size: float, fill: str, tracking: float = 0.0, anchor: str = "start"
+    ) -> str:
         """One run of text: each glyph is defined once per file (Doc) and placed with <use>."""
         scale = size / self.upm
         w = self.width(s, size, tracking)
@@ -191,12 +244,14 @@ class Face:
 
 def icon(name: str, x: float, y: float, size: float, color: str) -> str:
     k = num(size / 24)
-    return (f'<g transform="translate({num(x)} {num(y)}) scale({k})" fill="none" stroke="{color}" '
-            f'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{ICONS[name]}</g>')
+    return (
+        f'<g transform="translate({num(x)} {num(y)}) scale({k})" fill="none" stroke="{color}" '
+        f'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{ICONS[name]}</g>'
+    )
 
 
 class Kit:
-    def __init__(self, fonts: Path):
+    def __init__(self, fonts: Path) -> None:
         self.sans = Face(fonts / "GeistVF.woff", 400, "r")
         self.medium = Face(fonts / "GeistVF.woff", 500, "m")
         self.semi = Face(fonts / "GeistVF.woff", 600, "b")
@@ -209,11 +264,13 @@ class Kit:
         defs = "".join(f.doc.render() for f in self.faces if f.doc.defs)
         for f in self.faces:
             f.doc = Doc()
-        return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" '
-                f'role="img"><title>{title}</title>{defs}{body}</svg>\n')
+        return (
+            f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" '
+            f'role="img"><title>{title}</title>{defs}{body}</svg>\n'
+        )
 
     def lockup(self, x: float, top: float, k: float, color: str) -> str:
-        """The HQ-108 wordmark (mark + "Niaga Labs" at Geist 550), placed by its inked top-left corner."""
+        """The brand wordmark (mark + "Niaga Labs" at Geist 550), placed by its inked top-left corner."""
         cursor, parts, scale = 110.0, [], 48 / self.brand.upm
         for ch in "Niaga Labs":
             g = self.brand.glyph(ch)
@@ -222,8 +279,10 @@ class Kit:
             parts.append(pen.getCommands())
             cursor += g.width * scale - (0.8 if ch != " " else 0)
         # Inked box of the original lockup starts at (26, 31): mark at translate(18 25), square top at y=6.
-        return (f'<g transform="translate({num(x - 26 * k)} {num(top - 31 * k)}) scale({num(k)})" fill="{color}">'
-                f'<g transform="translate(18 25)">{MARK}</g><path d="{"".join(parts)}"/></g>')
+        return (
+            f'<g transform="translate({num(x - 26 * k)} {num(top - 31 * k)}) scale({num(k)})" fill="{color}">'
+            f'<g transform="translate(18 25)">{MARK}</g><path d="{"".join(parts)}"/></g>'
+        )
 
     def lockup_width(self, k: float) -> float:
         scale = 48 / self.brand.upm
@@ -243,8 +302,10 @@ class Kit:
             mark = f'<circle cx="{num(x + pad + dot)}" cy="{num(cy)}" r="{num(dot)}" fill="{TEAL}"/>'
             color = t["accent"]
         elif kind == "soon":
-            shell = (f'<rect x="{num(x + 0.75)}" y="{num(top + 0.75)}" width="{num(w - 1.5)}" height="{num(h - 1.5)}" '
-                     f'rx="{num(h / 2)}" fill="none" stroke="{TEAL}" stroke-width="1.5" stroke-dasharray="4 3"/>')
+            shell = (
+                f'<rect x="{num(x + 0.75)}" y="{num(top + 0.75)}" width="{num(w - 1.5)}" height="{num(h - 1.5)}" '
+                f'rx="{num(h / 2)}" fill="none" stroke="{TEAL}" stroke-width="1.5" stroke-dasharray="4 3"/>'
+            )
             mark = f'<circle cx="{num(x + pad + dot)}" cy="{num(cy)}" r="{num(dot - 0.75)}" fill="none" stroke="{TEAL}" stroke-width="1.5"/>'
             color = t["accent"]
         else:
@@ -257,16 +318,19 @@ class Kit:
     def banner(self) -> str:
         W, H = 1200, 420
         b = [
-            '<defs><clipPath id="c"><rect width="1200" height="420" rx="20"/></clipPath>'
-            f'<radialGradient id="g1" cx="1060" cy="30" r="560" gradientUnits="userSpaceOnUse">'
-            f'<stop offset="0" stop-color="{TEAL}" stop-opacity=".42"/><stop offset="1" stop-color="{TEAL}" stop-opacity="0"/></radialGradient>'
-            f'<radialGradient id="g2" cx="60" cy="440" r="420" gradientUnits="userSpaceOnUse">'
-            f'<stop offset="0" stop-color="{TEAL}" stop-opacity=".16"/><stop offset="1" stop-color="{TEAL}" stop-opacity="0"/></radialGradient></defs>',
+            (
+                '<defs><clipPath id="c"><rect width="1200" height="420" rx="20"/></clipPath>'
+                f'<radialGradient id="g1" cx="1060" cy="30" r="560" gradientUnits="userSpaceOnUse">'
+                f'<stop offset="0" stop-color="{TEAL}" stop-opacity=".42"/><stop offset="1" stop-color="{TEAL}" stop-opacity="0"/></radialGradient>'
+                f'<radialGradient id="g2" cx="60" cy="440" r="420" gradientUnits="userSpaceOnUse">'
+                f'<stop offset="0" stop-color="{TEAL}" stop-opacity=".16"/><stop offset="1" stop-color="{TEAL}" stop-opacity="0"/></radialGradient></defs>'
+            ),
             '<g clip-path="url(#c)">',
             f'<rect width="{W}" height="{H}" fill="{NAVY}"/>',
             '<g stroke="#FFFFFF" stroke-opacity=".05" stroke-width="1">'
             + "".join(f'<path d="M{x} 0V{H}"/>' for x in range(60, W, 60))
-            + "".join(f'<path d="M0 {y}H{W}"/>' for y in range(60, H, 60)) + "</g>",
+            + "".join(f'<path d="M0 {y}H{W}"/>' for y in range(60, H, 60))
+            + "</g>",
             f'<rect width="{W}" height="{H}" fill="url(#g1)"/><rect width="{W}" height="{H}" fill="url(#g2)"/>',
             "</g>",
         ]
@@ -278,8 +342,10 @@ class Kit:
         b.append(self.mono.text("niagalabs.com  ·  hello@niagalabs.com", x0, 370, 18, "#9FB3C8"))
 
         px, py, pw, ph = 700, 60, 436, 300
-        b.append(f'<rect x="{px}" y="{py}" width="{pw}" height="{ph}" rx="14" fill="#FFFFFF" fill-opacity=".04" '
-                 f'stroke="#FFFFFF" stroke-opacity=".14"/>')
+        b.append(
+            f'<rect x="{px}" y="{py}" width="{pw}" height="{ph}" rx="14" fill="#FFFFFF" fill-opacity=".04" '
+            f'stroke="#FFFFFF" stroke-opacity=".14"/>'
+        )
         left, right = px + 26, px + pw - 26
         b.append(self.mono.text("PRODUCT LINE", left, py + 38, 14, "#7FD0D1", tracking=2))
         b.append(self.mono.text("STATUS", right, py + 38, 14, "#7FD0D1", tracking=2, anchor="end"))
@@ -307,13 +373,17 @@ class Kit:
         b = []
         for i, (tag, value, label, detail) in enumerate(STATS):
             x, y = (i % cols) * (tw + gap), (i // cols) * (th + gap)
-            b.append(f'<rect x="{num(x + 0.5)}" y="{num(y + 0.5)}" width="{num(tw - 1)}" height="{th - 1}" rx="16" '
-                     f'fill="{t["card"]}" stroke="{t["border"]}"/>')
+            b.append(
+                f'<rect x="{num(x + 0.5)}" y="{num(y + 0.5)}" width="{num(tw - 1)}" height="{th - 1}" rx="16" '
+                f'fill="{t["card"]}" stroke="{t["border"]}"/>'
+            )
             b.append(f'<rect x="{num(x + 28)}" y="{y + 30}" width="4" height="40" rx="2" fill="{TEAL}"/>')
             b.append(self.semi.text(value, x + 46, y + 68, 48, t["title"]))
             b.append(self.mono.text(tag, x + tw - 26, y + 36, 13, t["accent"], tracking=1.6, anchor="end"))
-            for words, size, face, colour, base in ((label, 20, self.medium, t["strong"], 104),
-                                                    (detail, 17, self.sans, t["muted"], 128)):
+            for words, size, face, colour, base in (
+                (label, 20, self.medium, t["strong"], 104),
+                (detail, 17, self.sans, t["muted"], 128),
+            ):
                 assert face.width(words, size) < tw - 56, f"stat {value}: {words!r} does not fit on one line"
                 b.append(face.text(words, x + 28, y + base, size, colour))
         cap_y = 2 * th + gap + 44
@@ -323,8 +393,12 @@ class Kit:
     # ------------------------------------------------------------------ featured product card
     def featured(self, p: dict, t: dict) -> str:
         W, H, pad = 600, 540, 40
-        b = [f'<rect x=".75" y=".75" width="{W - 1.5}" height="{H - 1.5}" rx="20" fill="{t["card"]}" '
-             f'stroke="{t["border"]}" stroke-width="1.5"/>']
+        b = [
+            (
+                f'<rect x=".75" y=".75" width="{W - 1.5}" height="{H - 1.5}" rx="20" fill="{t["card"]}" '
+                f'stroke="{t["border"]}" stroke-width="1.5"/>'
+            )
+        ]
         b.append(f'<rect x="{pad}" y="{pad}" width="60" height="60" rx="15" fill="{t["tint"]}"/>')
         b.append(icon(p["icon"], pad + 15, pad + 15, 30, t["icon"]))
         b.append(self.pill(p["status"][0], p["status"][1], W - pad, pad + 12, 36, 17, t))
@@ -347,13 +421,17 @@ class Kit:
         b.append(self.medium.text(p["link"], W - pad - 22, top + 22, 18, t["accent"], anchor="end"))
         b.append(icon("arrow", W - pad - 18, top + 7, 18, t["accent"]))
         assert cx < W - pad - 22 - lw - 12, f"{p['slug']}: chips run into the link"
-        return self.svg(W, H, f'{p["title"]}: {p["status"][0]}', "".join(b))
+        return self.svg(W, H, f"{p['title']}: {p['status'][0]}", "".join(b))
 
     # ------------------------------------------------------------------ coming-next card
     def upcoming(self, p: dict, t: dict) -> str:
         W, H, pad = 400, 272, 30
-        b = [f'<rect x=".75" y=".75" width="{W - 1.5}" height="{H - 1.5}" rx="18" fill="{t["card"]}" '
-             f'stroke="{t["border"]}" stroke-width="1.5"/>']
+        b = [
+            (
+                f'<rect x=".75" y=".75" width="{W - 1.5}" height="{H - 1.5}" rx="18" fill="{t["card"]}" '
+                f'stroke="{t["border"]}" stroke-width="1.5"/>'
+            )
+        ]
         b.append(f'<rect x="{pad}" y="{pad}" width="46" height="46" rx="12" fill="{t["tint"]}"/>')
         b.append(icon(p["icon"], pad + 11, pad + 11, 24, t["icon"]))
         b.append(self.pill(p["status"][0], p["status"][1], W - pad, pad + 8, 30, 15, t))
@@ -361,7 +439,7 @@ class Kit:
         b.append(self.semi.text(p["title"], pad, 152, 28, t["title"]))
         for j, line in enumerate(self.sans.wrap(p["body"], 19, W - 2 * pad)[:3]):
             b.append(self.sans.text(line, pad, 190 + j * 27, 19, t["body"]))
-        return self.svg(W, H, f'{p["title"]}: {p["status"][0]}', "".join(b))
+        return self.svg(W, H, f"{p['title']}: {p['status'][0]}", "".join(b))
 
     def wordmark(self, color: str) -> str:
         w = self.lockup_width(1) + 2
@@ -373,8 +451,11 @@ def main() -> None:
     ap.add_argument("--fonts", type=Path, required=True, help="folder holding GeistVF.woff and GeistMonoVF.woff")
     kit = Kit(ap.parse_args().fonts)
     OUT.mkdir(parents=True, exist_ok=True)
-    files = {"banner.svg": kit.banner(), "wordmark-navy.svg": kit.wordmark(NAVY),
-             "wordmark-white.svg": kit.wordmark("#FFFFFF")}
+    files = {
+        "banner.svg": kit.banner(),
+        "wordmark-navy.svg": kit.wordmark(NAVY),
+        "wordmark-white.svg": kit.wordmark("#FFFFFF"),
+    }
     for theme, t in THEMES.items():
         files[f"stats-{theme}.svg"] = kit.stats(t)
         for p in FEATURED:
