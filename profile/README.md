@@ -24,9 +24,9 @@ and the infrastructure they run on.
 
 ## How the work is organised
 
-- **One organisation, one naming rule.** Every repository here is `niaga-labs-<product>-<name>`, with the
-  product codes `ecom`, `pet`, `quant`, `platform`, `hq` and `chain`. Niaga's repositories still carry their
-  short names (`service-order`, `frontend-admin`, …) until their rename.
+- **One organisation, one naming rule:** `niaga-labs-<product>-<name>`, with the product codes `ecom`, `pet`,
+  `quant`, `platform`, `hq` and `chain`. The Kilat and chain repositories follow it already; the rest move to
+  it one rename at a time, so Niaga's still carry their short names (`service-order`, `frontend-admin`, …).
 - **Stack:** Go microservices · Next.js / TypeScript · PostgreSQL and PostGIS · NATS and Kafka · Docker · Cloudflare.
 - **Every change starts from a ticket.** It goes on its own branch and through a review gate, and CI builds
   the services on every push. Backups are encrypted and restore-tested.
