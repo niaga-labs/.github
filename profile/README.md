@@ -52,28 +52,25 @@ Planned products, shown so you know where the studio is heading. No dates or pri
 ## How it fits together
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0B1F3A", "primaryTextColor": "#FFFFFF", "nodeTextColor": "#FFFFFF", "primaryBorderColor": "#0F8B8D", "lineColor": "#0F8B8D", "titleColor": "#0F8B8D", "textColor": "#0F8B8D", "fontFamily": "Segoe UI, Helvetica, Arial, sans-serif"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0B1F3A", "primaryTextColor": "#FFFFFF", "nodeTextColor": "#FFFFFF", "primaryBorderColor": "#0F8B8D", "lineColor": "#0F8B8D", "titleColor": "#0F8B8D", "textColor": "#0F8B8D"}}}%%
 flowchart TB
-    NL["<b>Niaga Labs</b><br/>independent software studio · Malaysia"]
+    NL["<b>Niaga Labs</b><br/>software studio · Malaysia"]
 
     subgraph NOW["Building now"]
-        direction LR
-        COM["<b>Niaga Commerce</b><br/>e-commerce platform<br/>in development"]
-        QNT["<b>Quant research</b><br/>our own paper book<br/>not a service"]
+        COM["<b>Niaga Commerce</b><br/>e-commerce platform"]
+        QNT["<b>Quant research</b><br/>our own paper book"]
     end
 
     subgraph NEXT["Next, one at a time"]
-        direction LR
         CA["<b>Chain Analytics</b><br/>coming soon"]
         CT["<b>Chain trading tool</b><br/>coming soon"]
         KPD["<b>Kilat Pet Delivery</b><br/>later"]
     end
 
     subgraph PLAT["Shared platform"]
-        direction LR
-        STACK["<b>Dev stack</b><br/>one command, every service"]
-        CF["<b>Cloudflare</b><br/>site · DNS · email · backups"]
-        FLOW["<b>Jira + GitHub</b><br/>ticket → review → merge"]
+        STACK["<b>Dev stack</b><br/>one command"]
+        CF["<b>Cloudflare</b><br/>site · email · backups"]
+        FLOW["<b>Jira + GitHub</b><br/>ticket → merge"]
     end
 
     NL --> NOW
@@ -98,7 +95,7 @@ Ten Go services behind a Next.js storefront and admin, one PostgreSQL database w
 NATS JetStream for events. Built from 2023 to 2026 for a single online store, then generalised.
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0B1F3A", "primaryTextColor": "#FFFFFF", "nodeTextColor": "#FFFFFF", "primaryBorderColor": "#0F8B8D", "lineColor": "#0F8B8D", "titleColor": "#0F8B8D", "textColor": "#0F8B8D", "fontFamily": "Segoe UI, Helvetica, Arial, sans-serif"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0B1F3A", "primaryTextColor": "#FFFFFF", "nodeTextColor": "#FFFFFF", "primaryBorderColor": "#0F8B8D", "lineColor": "#0F8B8D", "titleColor": "#0F8B8D", "textColor": "#0F8B8D"}}}%%
 flowchart LR
     subgraph CH["Sales channels"]
         direction TB
@@ -151,7 +148,7 @@ flow, the database design and the patterns behind them.
 ## How we work
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0B1F3A", "primaryTextColor": "#FFFFFF", "nodeTextColor": "#FFFFFF", "primaryBorderColor": "#0F8B8D", "lineColor": "#0F8B8D", "fontFamily": "Segoe UI, Helvetica, Arial, sans-serif"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0B1F3A", "primaryTextColor": "#FFFFFF", "nodeTextColor": "#FFFFFF", "primaryBorderColor": "#0F8B8D", "lineColor": "#0F8B8D"}}}%%
 flowchart LR
     T["<b>Jira ticket</b><br/>acceptance criteria"] --> B["<b>Branch</b><br/>named for the ticket"]
     B --> C["<b>Code + tests</b><br/>exact counts"]
