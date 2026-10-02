@@ -1,22 +1,22 @@
 <div align="center">
 
-<a href="https://niagalabs.com"><img src="assets/banner.svg" width="100%" alt="Niaga Labs, an independent software studio in Malaysia. Software for commerce. Tools for what's next. Product lines: Niaga Commerce, in development. Quant research, paper trading. Chain Analytics and the Chain trading tool, coming soon. Kilat Pet Delivery, later." /></a>
+<a href="https://niagalabs.com"><img src="assets/banner.svg" width="100%" alt="Niaga Labs, a commerce software startup in Malaysia. Software for commerce. One back office, every channel. Niaga Commerce today: storefront and admin, live demo. Stock and orders, built. Shopee and TikTok Shop, being finished. FPX, cards and bank transfer, sandbox. Lazada, later." /></a>
 
 <a href="https://niagalabs.com"><img alt="Website: niagalabs.com" src="https://img.shields.io/badge/web-niagalabs.com-0B1F3A?style=flat-square" /></a>
-<a href="mailto:hello@niagalabs.com"><img alt="Email: hello@niagalabs.com" src="https://img.shields.io/badge/email-hello%40niagalabs.com-0F8B8D?style=flat-square" /></a>
-<img alt="Based in Malaysia" src="https://img.shields.io/badge/based%20in-Malaysia-0B1F3A?style=flat-square" />
-<a href="https://github.com/MuhammadLuqman-99"><img alt="Founder: @MuhammadLuqman-99" src="https://img.shields.io/badge/founder-%40MuhammadLuqman--99-0F8B8D?style=flat-square&logo=github&logoColor=white" /></a>
+<a href="https://demo.niagalabs.com"><img alt="Live demo: demo.niagalabs.com" src="https://img.shields.io/badge/live%20demo-demo.niagalabs.com-0F8B8D?style=flat-square" /></a>
+<a href="mailto:hello@niagalabs.com"><img alt="Email: hello@niagalabs.com" src="https://img.shields.io/badge/email-hello%40niagalabs.com-0B1F3A?style=flat-square" /></a>
+<img alt="Founded 2026 in Malaysia" src="https://img.shields.io/badge/founded-2026%20·%20Malaysia-0F8B8D?style=flat-square" />
 
-### An independent software studio in Malaysia.
+### A Malaysian startup building software for commerce.
 
-We build an e-commerce platform for our own store and a research platform that tests trading ideas on paper.<br />
-More products follow, one at a time. Everything is designed, built and run in-house.
+We build **Niaga Commerce**: one back office for a seller's own online store, Shopee and TikTok Shop.<br />
+Products, stock, orders, payments and shipping in one place. One product, built and run in-house.
 
 </div>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg" />
-  <img src="assets/stats-light.svg" width="100%" alt="By the numbers. 65 repositories in one organisation, 29 public and 8 archived. Niaga Commerce: 10 Go services and 3 Next.js apps, 17 PostgreSQL schemas in one database, Shopee and TikTok Shop live-capable with Lazada built. Quant research: 20 audited strategy trials, all kept on the record, and 0 promoted to real money." />
+  <img src="assets/stats-light.svg" width="100%" alt="By the numbers. 65 repositories in one organisation, 29 public and 8 archived. Niaga Commerce: 10 Go services and 3 Next.js apps, 17 PostgreSQL schemas in one database, Shopee and TikTok Shop with Lazada built. 3 co-founders, founded 2026 in Malaysia. 20 products in the live demo store at demo.niagalabs.com." />
 </picture>
 
 <details>
@@ -28,68 +28,21 @@ More products follow, one at a time. Everything is designed, built and run in-ho
 | 65 repositories, 29 public, 8 archived | `gh repo list niaga-labs`, 13 Sep 2026 |
 | 10 Go services, 3 Next.js apps | the `niaga-labs-ecom-service-*` and `niaga-labs-ecom-frontend-*` repositories, and the [Niaga write-up](https://github.com/niaga-labs/niaga-labs-ecom-showcase) |
 | 17 PostgreSQL schemas | `niaga-labs-ecom-infra-database` and the Niaga write-up |
-| 2 + 1 marketplaces | Shopee and TikTok Shop sync is live-capable. Lazada is complete but proven against fixtures only (Niaga write-up) |
-| 20 trials, 0 promoted | the [quant research notes](https://github.com/niaga-labs/niaga-labs-quant-showcase), section 7, as of 10 Sep 2026 |
+| 2 + 1 marketplaces | Shopee and TikTok Shop connections are being finished. Lazada is complete but proven against fixtures only (Niaga write-up) |
+| 3 co-founders | [niagalabs.com/about](https://niagalabs.com/about/) |
+| 20 demo products | the live demo store, counted 2 Oct 2026 |
 
 </details>
 
 ## What we build
 
 <a href="https://github.com/niaga-labs/niaga-labs-ecom-showcase"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-commerce-dark.svg" /><img src="assets/card-commerce-light.svg" width="49%" alt="Niaga Commerce. E-commerce platform, in development. A commerce platform that connects a storefront with catalogue, orders, payments and fulfilment. Our own dropship store is the starting point. Catalogue, orders, payments and refunds. Shopee and TikTok Shop sync. Multi-courier shipping and returns. Go, Next.js, PostgreSQL, NATS. Opens the architecture write-up." /></picture></a>
-<a href="https://github.com/niaga-labs/niaga-labs-quant-showcase"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-quant-dark.svg" /><img src="assets/card-quant-light.svg" width="49%" alt="Quant research platform. Quantitative research, paper trading. Our own paper-trading platform for testing strategies. Every idea is judged the same way, and failures stay on the record. It is not a service. Pre-registered strategy specs. One shared walk-forward audit. Eleven-criterion promotion gate. Python, FastAPI, React, PostgreSQL. Opens the research notes." /></picture></a>
 
-Click a card for its public write-up; the code itself stays private. The quant platform trades our own paper
-book only. It is not a signal, subscription or trading service, and nothing on this page is investment advice.
+Niaga Commerce is our one product. A seller who lists on Shopee, on TikTok Shop and on their own site is running
+three catalogues, three stock counts and three order lists; Niaga puts them in one place, so the same item is not
+sold twice. Our own store runs on it first. See it running at **[demo.niagalabs.com](https://demo.niagalabs.com)**.
 
-### What comes next
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-chain-analytics-dark.svg" /><img src="assets/card-chain-analytics-light.svg" width="32%" alt="Chain Analytics. Robinhood Chain, coming soon. A dashboard for Robinhood Chain market activity. Read-only research is under way first." /></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-chain-tool-dark.svg" /><img src="assets/card-chain-tool-light.svg" width="32%" alt="Chain trading tool. Robinhood Chain, coming soon. A tool for traders on Robinhood Chain, planned once the dashboard has proven useful." /></picture>
-<a href="https://github.com/orgs/niaga-labs/repositories?q=niaga-labs-pet&type=public"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-kilat-dark.svg" /><img src="assets/card-kilat-light.svg" width="32%" alt="Kilat Pet Delivery. Logistics, later. Booking and live tracking for pet transport. Paused while we focus on commerce. Opens its public repositories." /></picture></a>
-
-Planned products, shown so you know where the studio is heading. No dates or prices yet.
-
-## How it fits together
-
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0B1F3A", "primaryTextColor": "#FFFFFF", "nodeTextColor": "#FFFFFF", "primaryBorderColor": "#0F8B8D", "lineColor": "#0F8B8D", "titleColor": "#0F8B8D", "textColor": "#0F8B8D"}}}%%
-flowchart LR
-    NL["<b>Niaga Labs</b><br/>software studio<br/>Malaysia"]
-
-    subgraph NOW["Building now"]
-        direction TB
-        COM["<b>Niaga Commerce</b><br/>e-commerce platform"]
-        QNT["<b>Quant research</b><br/>our own paper book"]
-    end
-
-    subgraph NEXT["Next, one at a time"]
-        direction TB
-        CA["<b>Chain Analytics</b><br/>coming soon"]
-        CT["<b>Chain trading tool</b><br/>coming soon"]
-        KPD["<b>Kilat Pet Delivery</b><br/>later"]
-    end
-
-    subgraph PLAT["Shared platform"]
-        direction TB
-        STACK["<b>Dev stack</b><br/>one command"]
-        CF["<b>Cloudflare</b><br/>site · email · backups"]
-        FLOW["<b>Jira + GitHub</b><br/>ticket → merge"]
-    end
-
-    NL --> NOW
-    NL -.-> NEXT
-    NL --> PLAT
-
-    classDef root fill:#0F8B8D,stroke:#0F8B8D,color:#FFFFFF
-    classDef soon fill:#12304F,stroke:#0F8B8D,stroke-dasharray:5 4,color:#D8E6F0
-    classDef later fill:#1C2A3D,stroke:#6B7C90,stroke-dasharray:5 4,color:#B8C4D0
-    class NL root
-    class CA,CT soon
-    class KPD later
-    style NOW fill:none,stroke:#0F8B8D,color:#0F8B8D
-    style NEXT fill:none,stroke:#6B7C90,stroke-dasharray:5 4,color:#6B7C90
-    style PLAT fill:none,stroke:#0F8B8D,color:#0F8B8D
-```
+Click the card for the public write-up; the code itself stays private.
 
 ## Inside Niaga Commerce
 
@@ -153,61 +106,62 @@ flow, the database design and the patterns behind them.
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0B1F3A", "primaryTextColor": "#FFFFFF", "nodeTextColor": "#FFFFFF", "primaryBorderColor": "#0F8B8D", "lineColor": "#0F8B8D"}}}%%
 flowchart LR
     T["<b>Jira ticket</b><br/>own branch"] --> C["<b>Code + tests</b><br/>exact counts"]
-    C --> R["<b>Review</b><br/>must approve"]
-    R --> P["<b>Pull request</b><br/>CI runs"]
+    C --> P["<b>Pull request</b><br/>checks quoted"]
     P --> M["<b>Merge</b><br/>changelog, Done"]
+    M --> D["<b>Deploy</b><br/>verified live"]
 
     classDef done fill:#0F8B8D,stroke:#0F8B8D,color:#FFFFFF
-    class M done
+    class D done
 ```
 
 - **Ticket first.** Every change starts from a Jira ticket and lands on its own branch, named for it.
-- **Green before it ships.** Tests pass before a commit, and the exact counts go into the pull request.
-- **Reviewed, then merged.** A review agent checks the diff against the ticket's acceptance criteria and has to
-  approve it before the merge.
+- **Green before it ships.** The repository's own checks pass before a merge, and the exact counts go into the
+  pull request.
+- **Checked live.** After a deploy we test the real site from the outside, not only the build.
 - **Written down as it happens.** A changelog entry for every change and a lessons log for every surprise, so the
   reasoning is still there six months later.
 - **Safe by default.** Hooks keep secrets out of every repository. Database backups are encrypted and
   restore-tested.
-- **Built by a person, with AI in the toolkit.** ChatGPT and Claude help explore, build and review. A human sets
-  the direction and owns every decision.
+- **People decide, AI helps.** ChatGPT, Claude and Codex help explore, build and review. The founders set the
+  direction and own every decision.
 
 ## Stack
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=go,ts,nextjs,react,tailwind,python,fastapi,postgres,redis,kafka,docker,nginx,cloudflare,githubactions,swift&theme=dark&perline=15" />
-  <img alt="Go, TypeScript, Next.js, React, Tailwind CSS, Python, FastAPI, PostgreSQL, Redis, Kafka, Docker, nginx, Cloudflare, GitHub Actions, Swift" src="https://skillicons.dev/icons?i=go,ts,nextjs,react,tailwind,python,fastapi,postgres,redis,kafka,docker,nginx,cloudflare,githubactions,swift&theme=light&perline=15" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=go,ts,nextjs,react,tailwind,postgres,redis,docker,nginx,cloudflare&theme=dark&perline=10" />
+  <img alt="Go, TypeScript, Next.js, React, Tailwind CSS, PostgreSQL, Redis, Docker, nginx, Cloudflare" src="https://skillicons.dev/icons?i=go,ts,nextjs,react,tailwind,postgres,redis,docker,nginx,cloudflare&theme=light&perline=10" />
 </picture>
 
 | Layer | What we use |
 |---|---|
-| Services | Go 1.25 microservices · Python 3.12 with FastAPI |
-| Front ends | Next.js · React · TypeScript · Tailwind · SwiftUI for the Kilat iOS apps |
-| Data | PostgreSQL 16 with PostGIS · Redis · MinIO · Meilisearch |
-| Messaging | NATS JetStream for Niaga · Kafka for Kilat |
-| Platform | Docker Compose · nginx · GitHub Actions · Cloudflare Pages, DNS, Email Routing and R2 |
+| Services | Go 1.25 microservices |
+| Front ends | Next.js · React · TypeScript · Tailwind |
+| Data | PostgreSQL 16 · Redis · MinIO · Meilisearch |
+| Messaging | NATS JetStream |
+| Platform | Docker Compose · nginx · Cloudflare Pages, DNS, Tunnel and R2 |
 
 ## Where the code lives
 
-Every repository is named `niaga-labs-<product>-<name>`.
+Every repository is named `niaga-labs-<product>-<name>`. Niaga Commerce is `ecom`.
 
-| Product code | Product | Repositories | Start here |
-|---|---|---|---|
-| `ecom` | Niaga Commerce | 21, 3 public | [write-up](https://github.com/niaga-labs/niaga-labs-ecom-showcase) · [`lib-common`](https://github.com/niaga-labs/niaga-labs-ecom-lib-common) · [`lib-ui`](https://github.com/niaga-labs/niaga-labs-ecom-lib-ui) |
-| `quant` | Quant research platform | 2, 1 public | [research notes](https://github.com/niaga-labs/niaga-labs-quant-showcase) |
-| `chain` | Chain Analytics and the Chain trading tool | 1, private | coming soon |
-| `pet` | Kilat Pet Delivery | 30, 24 public | [public repositories](https://github.com/orgs/niaga-labs/repositories?q=niaga-labs-pet&type=public) |
-| `platform` · `hq` | Shared dev stack · company site | 2, private | [niagalabs.com](https://niagalabs.com) |
-| `crm` | Early CRM scaffolds | 8, archived | |
+| Product code | What | Start here |
+|---|---|---|
+| `ecom` | Niaga Commerce | [write-up](https://github.com/niaga-labs/niaga-labs-ecom-showcase) · [`lib-common`](https://github.com/niaga-labs/niaga-labs-ecom-lib-common) · [`lib-ui`](https://github.com/niaga-labs/niaga-labs-ecom-lib-ui) |
+| `platform` · `hq` | Shared dev stack · company site | [niagalabs.com](https://niagalabs.com) |
+
+Other repositories here are earlier experiments, paused or archived. They are not products we offer.
 
 ## Who
 
-<img src="https://github.com/MuhammadLuqman-99.png?size=120" width="60" height="60" align="left" alt="" />
+Three co-founders in Selangor, Malaysia.
 
-**Muhammad Luqman**, founder and engineer. Designs, builds and runs everything here.<br />
-[GitHub](https://github.com/MuhammadLuqman-99) · [LinkedIn](https://www.linkedin.com/in/muhammad-luqman-b894a4337) · [hello@niagalabs.com](mailto:hello@niagalabs.com)
+| | |
+|---|---|
+| **Muhammad Luqman** · Founder & CEO | product, platform code and the company · [GitHub](https://github.com/MuhammadLuqman-99) · [LinkedIn](https://www.linkedin.com/in/muhammad-luqman-b894a4337) |
+| **Amirul Afanndy** · Co-founder, DevOps | the servers, the release pipeline and the monitoring |
+| **Wildan W.** · Co-founder, Business & Ops | onboarding sellers, partnerships and operations |
 
-<br clear="left" />
+More at [niagalabs.com/about](https://niagalabs.com/about/) · [hello@niagalabs.com](mailto:hello@niagalabs.com)
 
 <div align="center">
 <br />
@@ -216,5 +170,5 @@ Every repository is named `niaga-labs-<product>-<name>`.
   <img src="assets/wordmark-navy.svg" height="34" alt="Niaga Labs" />
 </picture>
 
-<sub>© 2026 Niaga Labs · Malaysia · <a href="https://niagalabs.com">niagalabs.com</a></sub>
+<sub>© 2026 Niaga Labs · a startup in Malaysia · <a href="https://niagalabs.com">niagalabs.com</a></sub>
 </div>
