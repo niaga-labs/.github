@@ -4,9 +4,9 @@ Every word is drawn as vector paths from the Geist fonts, so the SVGs look the s
 machine and need no web font. Colours are the Ledger palette: navy #0B1F3A and one teal #0F8B8D.
 The mark is the Niaga Labs interrupted N, unchanged.
 
-What the cards say is the company's published product line-up: Niaga Commerce and the quant
-research platform lead, the two Chain products are "Coming soon" and Kilat is "Later". Change it
-only together with the company site. Every number in STATS is counted, not estimated; the README
+What the cards say is the company's published product line-up: ONE product, Niaga Commerce (owner
+ruling 2026-09-16; HQ-169 on 2026-10-02 removed the quant, Chain and Kilat cards and the "studio" wording,
+because Google's AI overview quoted it). Change it only together with the company site. Every number in STATS is counted, not estimated; the README
 says where.
 
 Run from the repo root. --fonts is a folder holding the Geist variable fonts as GeistVF.woff and
@@ -94,50 +94,9 @@ FEATURED = [
         "chips": ["Go", "Next.js", "PostgreSQL", "NATS"],
         "link": "Write-up",
     },
-    {
-        "slug": "quant",
-        "icon": "flask",
-        "overline": "QUANTITATIVE RESEARCH",
-        "title": "Quant research platform",
-        "status": ("Paper trading", "active"),
-        "summary": "Our own paper-trading platform for testing strategies. Every idea is judged the same "
-        "way, and failures stay on the record. It is not a service.",
-        "features": [
-            "Pre-registered strategy specs",
-            "One shared walk-forward audit",
-            "Eleven-criterion promotion gate",
-        ],
-        "chips": ["Python", "FastAPI", "React", "PostgreSQL"],
-        "link": "Notes",
-    },
 ]
 
-NEXT = [
-    {
-        "slug": "chain-analytics",
-        "icon": "chart",
-        "overline": "ROBINHOOD CHAIN",
-        "title": "Chain Analytics",
-        "status": ("Coming soon", "soon"),
-        "body": "A dashboard for Robinhood Chain market activity. Read-only research is under way first.",
-    },
-    {
-        "slug": "chain-tool",
-        "icon": "bot",
-        "overline": "ROBINHOOD CHAIN",
-        "title": "Chain trading tool",
-        "status": ("Coming soon", "soon"),
-        "body": "A tool for traders on Robinhood Chain, planned once the dashboard has proven useful.",
-    },
-    {
-        "slug": "kilat",
-        "icon": "truck",
-        "overline": "LOGISTICS",
-        "title": "Kilat Pet Delivery",
-        "status": ("Later", "later"),
-        "body": "Booking and live tracking for pet transport. Paused while we focus on commerce.",
-    },
-]
+NEXT: list = []  # HQ-169: nothing announced beyond Niaga Commerce.
 
 # (tag, number, label, detail). Sources are listed under the stats image in profile/README.md.
 STATS = [
@@ -145,17 +104,19 @@ STATS = [
     ("NIAGA", "10 + 3", "Go services + Next.js apps", "behind one storefront"),
     ("NIAGA", "17", "PostgreSQL schemas", "one database, schema per service"),
     ("NIAGA", "2 + 1", "marketplaces", "Shopee, TikTok Shop · Lazada built"),
-    ("QUANT", "20", "audited strategy trials", "every one kept on the record"),
-    ("QUANT", "0", "promoted to real money", "none passed every gate criterion"),
+    ("TEAM", "3", "co-founders", "Malaysia · founded 2026"),
+    ("DEMO", "20", "products in the live demo store", "demo.niagalabs.com"),
 ]
-STATS_CAPTION = "Counted 13 Sep 2026 from GitHub and the two public write-ups. Quant figures as of 10 Sep 2026."
+STATS_CAPTION = "Repositories counted 13 Sep 2026; the demo store counted 2 Oct 2026."
 
+# HQ-169: one product, so the panel lists what Niaga Commerce does today and how far each part is. Same truth as
+# the company site's features note: the marketplace connections are not live yet.
 BANNER_ROWS = [
-    ("Niaga Commerce", "In development", "active"),
-    ("Quant research", "Paper trading", "active"),
-    ("Chain Analytics", "Coming soon", "soon"),
-    ("Chain trading tool", "Coming soon", "soon"),
-    ("Kilat Pet Delivery", "Later", "later"),
+    ("Storefront + admin", "Live demo", "active"),
+    ("Stock and orders", "Built", "active"),
+    ("Shopee · TikTok Shop", "Being finished", "soon"),
+    ("FPX · cards · transfer", "Sandbox", "soon"),
+    ("Lazada", "Later", "later"),
 ]
 
 
@@ -335,10 +296,10 @@ class Kit:
             "</g>",
         ]
         x0 = 64
-        b.append(self.mono.text("INDEPENDENT SOFTWARE STUDIO · MALAYSIA", x0, 94, 17, "#7FD0D1", tracking=2.2))
+        b.append(self.mono.text("COMMERCE SOFTWARE STARTUP · MALAYSIA", x0, 94, 17, "#7FD0D1", tracking=2.2))
         b.append(self.lockup(x0, 124, 1.6, "#FFFFFF"))
         b.append(self.medium.text("Software for commerce.", x0, 274, 40, "#FFFFFF"))
-        b.append(self.medium.text("Tools for what’s next.", x0, 324, 40, "#7FD0D1"))
+        b.append(self.medium.text("One back office, every channel.", x0, 324, 40, "#7FD0D1"))
         b.append(self.mono.text("niagalabs.com  ·  hello@niagalabs.com", x0, 370, 18, "#9FB3C8"))
 
         px, py, pw, ph = 700, 60, 436, 300
@@ -347,7 +308,7 @@ class Kit:
             f'stroke="#FFFFFF" stroke-opacity=".14"/>'
         )
         left, right = px + 26, px + pw - 26
-        b.append(self.mono.text("PRODUCT LINE", left, py + 38, 14, "#7FD0D1", tracking=2))
+        b.append(self.mono.text("NIAGA COMMERCE", left, py + 38, 14, "#7FD0D1", tracking=2))
         b.append(self.mono.text("STATUS", right, py + 38, 14, "#7FD0D1", tracking=2, anchor="end"))
         b.append(f'<path d="M{left} {py + 56}H{right}" stroke="#FFFFFF" stroke-opacity=".16"/>')
         for i, (name, status, kind) in enumerate(BANNER_ROWS):
@@ -364,7 +325,7 @@ class Kit:
                 b.append(f'<circle cx="{num(cx)}" cy="{cy}" r="5" fill="#5B6B80"/>')
             if i < len(BANNER_ROWS) - 1:
                 b.append(f'<path d="M{left} {base + 19}H{right}" stroke="#FFFFFF" stroke-opacity=".07"/>')
-        return self.svg(W, H, "Niaga Labs. Software for commerce. Tools for what’s next.", "".join(b))
+        return self.svg(W, H, "Niaga Labs, a commerce software startup in Malaysia. Software for commerce. One back office, every channel.", "".join(b))
 
     # ------------------------------------------------------------------ stats strip
     def stats(self, t: dict) -> str:
